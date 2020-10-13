@@ -9,6 +9,7 @@ const weatherFunction = require('./weather');
 
 //variable for express
 const app = express();
+const port = process.env.PORT || 3000
 
 //establish variable for different paths
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -79,6 +80,6 @@ app.get('*', (req, res) => {
 
 
 //listens for port
-app.listen(3000, () => {
-    console.log('Server is Live on port 3000')
+app.listen(port, () => {
+    console.log('Server is Live on ' + port)
 })

@@ -4,8 +4,9 @@ const address = document.querySelector('.location');
 const forecast = document.querySelector('.weatherForecast');
 const weatherIcon = document.querySelector('.weatherIcon');
 
+
 function getInfo() {
-    fetch('http://localhost:3000/weather?address=' + searchBar.value).then((res) => {
+    fetch('/weather?address=' + searchBar.value).then((res) => {
         res.json().then((data) => {
             if (data.error) {
                 console.log(data.error);
